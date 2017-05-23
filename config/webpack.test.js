@@ -11,29 +11,29 @@ module.exports = {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          use: 'babel-loader',
           options: {
-            presets: ['es2015','react']
+            presets: ['es2015']
           }
         }
       },
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        use: 'html-loader'
 
       },
       {
         test: /\.scss$/,
-        loader: 'null'
+        use: 'null'
 
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-        loader: 'null'
+        use: 'null'
       },
       {
         test: /\.css$/,
-        loader: 'null'
+        use: 'null'
       }
     ]
   }

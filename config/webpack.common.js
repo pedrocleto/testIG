@@ -27,42 +27,42 @@ const config = {
       },
       {
           test: /index\.html$/,
-          loader: 'html-loader'
+          use: 'html-loader'
       },
       {
         test: /\.json$/,
-        loader: 'file-loader?name=json/[name].[ext]',
+        use: 'file-loader?name=json/[name].[ext]',
         include: helpers.root('src', 'assets/json/api.json')
       },
       {
         test: /\.json$/,
-        loader: 'json-loader',
+        use: 'json-loader',
         exclude: helpers.root('src', 'assets/json/api.json')
       },
       {
         test: /\.scss$/,
         use:  ExtractTextPlugin.extract({
           fallback: "style-loader",
-          loader: "css-loader!sass-loader",
+          use: "css-loader!sass-loader",
         })
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-        loader: 'file-loader?name=img/[name].[ext]'
+        use: 'file-loader?name=img/[name].[ext]'
       },
       {
         test: /\.css$/,
         exclude: helpers.root('src', 'app'),
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          loader: "css-loader",
+          use: "css-loader",
           publicPath: "/build"
         })
       },
       {
         test: /\.css$/,
         include: helpers.root('src', 'app'),
-        loader: 'raw'
+        use: 'raw'
       }
     ]
   },
